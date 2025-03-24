@@ -79,7 +79,6 @@ export const MemoryGame = () => {
     <div style={{ display: "flex", flexDirection: "row", alignItems: "center", padding: "16px" }}>
     <h1 style={{ fontSize: "1.5rem", fontWeight: "bold", marginBottom: "16px" }}>Memory Game</h1>
   
-    {/* Flexbox as Grid */}
     <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "flex-end", width: "320px" }}>
       {cards.map((card) => (
         <div
