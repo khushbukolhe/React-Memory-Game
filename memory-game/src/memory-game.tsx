@@ -76,23 +76,33 @@ export const MemoryGame = () => {
   };
 
   return (
-    <div className="flex flex-col items-center p-4">
-      <h1 className="text-2xl font-bold mb-4">Memory Game</h1>
-
-      {/* Flexbox as Grid */}
-      <div className="flex flex-wrap justify-center w-[320px]">
-        {cards.map((card) => (
-          <div
-            key={card.id}
-            className={`w-16 h-16 flex items-center justify-center text-2xl border rounded cursor-pointer ${
-              card.flipped || card.matched ? "bg-gray-200" : "bg-blue-500"
-            }`}
-            onClick={() => handleCardClick(card.id)}
-          >
-            {card.flipped || card.matched ? card.emoji : "❓"}
-          </div>
-        ))}
-      </div>
+    <div style={{ display: "flex", flexDirection: "row", alignItems: "center", padding: "16px" }}>
+    <h1 style={{ fontSize: "1.5rem", fontWeight: "bold", marginBottom: "16px" }}>Memory Game</h1>
+  
+    {/* Flexbox as Grid */}
+    <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "flex-end", width: "320px" }}>
+      {cards.map((card) => (
+        <div
+          key={card.id}
+          style={{
+            width: "64px",
+            height: "64px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            fontSize: "1.5rem",
+            border: "1px solid gray",
+            borderRadius: "4px",
+            cursor: "pointer",
+            backgroundColor: card.flipped || card.matched ? "#E5E7EB" : "#3B82F6",
+          }}
+          onClick={() => handleCardClick(card.id)}
+        >
+          {card.flipped || card.matched ? card.emoji : "❓"}
+        </div>
+      ))}
+    </div>
+  
 
       {gameOver && (
         <button
